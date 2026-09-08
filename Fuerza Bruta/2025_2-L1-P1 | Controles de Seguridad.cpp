@@ -2,7 +2,7 @@
 #include <cmath>
 using namespace std;
 
-int const CONTROLES = 8;
+const int CONTROLES = 8;
 
 void imprimirRecursos(int combinacion) {
     bool esPrimero=true;
