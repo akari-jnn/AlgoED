@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
-const int N 10
-const int M 10
+const int N = 10;
+const int M = 10;
 
 int encontrarArtefactos(char matriz[N][M],int posX,int posY,int alcance,int arriba,int abajo) {
     if (alcance==-1) return 0;
