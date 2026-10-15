@@ -12,6 +12,38 @@ struct Ingrediente {
 
 /*-------------------------------*/
 
+void insertarEnOrdenPasteleria(struct Lista & listaTAD, const struct ElementoLista & elemento) {
+    struct NodoLista *nuevo, *recorrido = listaTAD.inicio, * anterior = nullptr;
+    nuevo = new struct NodoLista;
+    nuevo->elemento = elemento;
+    while(recorrido){
+        if(strcmp(recorrido->elemento.nombre,elemento.nombre)>0) break;
+        anterior = recorrido;
+        recorrido = recorrido->siguiente;
+    }
+    nuevo->siguiente = recorrido;
+    if(anterior == nullptr) listaTAD.inicio = nuevo;
+    else anterior->siguiente = nuevo;
+    listaTAD.longitud++;
+}
+
+void imprimirPasteleria(const struct Lista & listaTAD) {
+
+    if (esListaVacia(listaTAD)) {
+        cout << "La lista esta vacia no se puede mostrar" << endl;
+    } else {
+        struct NodoLista * recorrido = listaTAD.inicio;
+
+        while (recorrido != nullptr) {
+            /*Este artificio coloca las comas despuÃ©s de la cabeza*/
+            cout << recorrido->elemento.codigo<< "   "<<recorrido->elemento.nombre<<endl;
+            recorrido = recorrido->siguiente;
+        }
+    }
+}
+
+/*-------------------------------*/
+
 #include <iostream>
 #include "Ingrediente.h"
 #include "BibliotecaLista/NodoLista.h"
