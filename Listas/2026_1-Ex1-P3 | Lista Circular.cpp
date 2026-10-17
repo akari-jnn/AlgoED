@@ -1,3 +1,44 @@
+---------- ElementoListaCircular.h ----------
+
+#ifndef LISTAS_ELEMENTOLISTACIRCULAR_H
+#define LISTAS_ELEMENTOLISTACIRCULAR_H
+
+struct ElementoListaCircular {
+    int node_id;
+    bool is_active;
+};
+
+#endif //LISTAS_ELEMENTOLISTACIRCULAR_H
+
+
+---------- NodoListaCircular.h ----------
+
+#ifndef LISTAS_NODOLISTACIRCULAR_H
+#define LISTAS_NODOLISTACIRCULAR_H
+
+struct NodoListaCircular {
+    ElementoListaCircular elemento;
+    NodoListaCircular *next;
+    NodoListaCircular *skip_next;
+};
+
+#endif //LISTAS_NODOLISTACIRCULAR_H
+
+
+---------- ListaCircular.h ----------
+
+#ifndef LISTAS_LISTACIRCULAR_H
+#define LISTAS_LISTACIRCULAR_H
+#include "NodoListaCircular.h"
+
+struct ListaCircular {
+    NodoListaCircular *fin;
+    int longitud;
+};
+
+#endif //LISTAS_LISTACIRCULAR_H
+
+    
 ---------- funcionesListaCircular.h ----------
 
 #ifndef LISTAS_FUNCIONESLISTACIRCULAR_H
