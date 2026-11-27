@@ -23,9 +23,9 @@ void zigZagOrder(const ArbolBinarioBusqueda &arbol) {
             while (not esPilaVacia(pila1)) {
                 ElementoPila ele = desapilar(pila1);
                 cout<<ele.nodo->elemento.numero<<' ';
-                if (esNodoVacio(ele.nodo->izquierda))
+                if (not esNodoVacio(ele.nodo->izquierda))
                     apilar(pila2,{0,0,ele.nodo->izquierda});
-                if (esNodoVacio(ele.nodo->derecha))
+                if (not esNodoVacio(ele.nodo->derecha))
                     apilar(pila2,{0,0,ele.nodo->derecha});
             }
             haciaDerecha=false;
@@ -33,9 +33,9 @@ void zigZagOrder(const ArbolBinarioBusqueda &arbol) {
             while (not esPilaVacia(pila2)) {
                 ElementoPila ele = desapilar(pila2);
                 cout<<ele.nodo->elemento.numero<<' ';
-                if (esNodoVacio(ele.nodo->derecha))
+                if (not esNodoVacio(ele.nodo->derecha))
                     apilar(pila1,{0,0,ele.nodo->derecha});
-                if (esNodoVacio(ele.nodo->izquierda))
+                if (not esNodoVacio(ele.nodo->izquierda))
                     apilar(pila1,{0,0,ele.nodo->izquierda});
             }
             haciaDerecha=true;
